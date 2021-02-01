@@ -105,7 +105,7 @@ const OrderScreen = ({ match, history }) => {
                 {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country}
               </p>
-              {order.isDelievered ? (
+              {order.isDelivered ? (
                 <Message variant='success'>
                   Delivered on {order.delieveredAt}
                 </Message>
@@ -193,7 +193,7 @@ const OrderScreen = ({ match, history }) => {
               {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
-                  {sdkReady ? (
+                  {!sdkReady ? (
                     <Loader />
                   ) : (
                     <PayPalButton
@@ -207,7 +207,7 @@ const OrderScreen = ({ match, history }) => {
               {userInfo &&
                 userInfo.isAdmin &&
                 order.isPaid &&
-                !order.isDelievered && (
+                !order.isDelivered && (
                   <ListGroup.Item>
                     <Button
                       type='button'
