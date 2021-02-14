@@ -7,7 +7,7 @@ import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
-import { errorHandler, notFound } from './middleware/errorHandler.js'
+import { error, errorHandler, notFound } from './middleware/errorHandler.js'
 
 dotenv.config()
 
@@ -45,8 +45,9 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.use(notFound)
-app.use(errorHandler)
+app.use(error)
+// app.use(notFound)
+// app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>
