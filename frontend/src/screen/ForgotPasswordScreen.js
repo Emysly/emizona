@@ -9,7 +9,6 @@ import { login } from '../action/userAction'
 
 const ForgotPasswordScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
 
   const dispatch = useDispatch()
 
