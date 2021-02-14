@@ -205,7 +205,7 @@ const deleteUser = asyncHandler(async (req, res) => {
     await user.remove()
     res.json({ message: 'User removed' })
   } else {
-    throw new ErrorResponse('User not found', 404)
+    return next(new ErrorResponse('User not found', 404))
   }
 })
 
@@ -218,7 +218,7 @@ const getUserById = asyncHandler(async (req, res) => {
   if (user) {
     res.json(user)
   } else {
-    throw new ErrorResponse('User not found', 404)
+    return next(new ErrorResponse('User not found', 404))
   }
 })
 
@@ -242,7 +242,7 @@ const updateUser = asyncHandler(async (req, res) => {
       isAdmin: updatedUser.isAdmin,
     })
   } else {
-    throw new ErrorResponse('User not found', 404)
+    return next(new ErrorResponse('User not found', 404))
   }
 })
 

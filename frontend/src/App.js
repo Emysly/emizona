@@ -19,6 +19,8 @@ import RegisterScreen from './screen/RegisterScreen'
 import ShippingScreen from './screen/ShippingScreen'
 import UserEditScreen from './screen/UserEditScreen'
 import UserListScreen from './screen/UserListScreen'
+import ForgotPasswordScreen from './screen/ForgotPasswordScreen'
+import ResetPasswordScreen from './screen/ResetPasswordScreen'
 
 const App = () => {
   return (
@@ -32,6 +34,11 @@ const App = () => {
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/login' component={LoginScreen} />
           <Route path='/register' component={RegisterScreen} />
+          <Route path='/forgotpassword' component={ForgotPasswordScreen} />
+          <Route
+            path='/passwordreset:/resetToken'
+            component={ResetPasswordScreen}
+          />
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/product/:id' component={ProductScreen} />
           <Route path='/cart/:id?' component={CartScreen} />

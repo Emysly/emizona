@@ -15,7 +15,7 @@ import {
 import { protect, admin } from '../middleware/authMiddleware.js'
 
 router.route('/').post(registerUser).get(protect, admin, getUsers)
-router.route('/forgetpassword').post(forgetPassword)
+router.route('/forgotpassword').post(forgetPassword)
 router.route('/passwordreset/:resetToken').put(resetPassword)
 router.post('/login', authUser)
 router
