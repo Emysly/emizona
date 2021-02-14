@@ -4,6 +4,9 @@
   "description": "An e-commerce web app",
   "main": "server.js",
   "type": "module",
+  "engines" : { 
+    "node" : ">=8.0.0 <11.0.0" 
+  },
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
