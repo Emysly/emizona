@@ -52,8 +52,8 @@ export const createOrder = (order) => async (dispatch, getState) => {
     localStorage.removeItem('cartItems')
   } catch (error) {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
+      error.response && error.response.data.error
+        ? error.response.data.error
         : error.message
     if (message === 'Not authorized, token failed') {
       dispatch(logout())
@@ -89,8 +89,8 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
     })
   } catch (error) {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
+      error.response && error.response.data.error
+        ? error.response.data.error
         : error.message
     if (message === 'Not authorized, token failed') {
       dispatch(logout())
@@ -134,8 +134,8 @@ export const payOrder = (orderId, paymentResult) => async (
     })
   } catch (error) {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
+      error.response && error.response.data.error
+        ? error.response.data.error
         : error.message
     if (message === 'Not authorized, token failed') {
       dispatch(logout())
@@ -175,8 +175,8 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
     })
   } catch (error) {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
+      error.response && error.response.data.error
+        ? error.response.data.error
         : error.message
     if (message === 'Not authorized, token failed') {
       dispatch(logout())
@@ -212,8 +212,8 @@ export const listMyOrders = () => async (dispatch, getState) => {
     })
   } catch (error) {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
+      error.response && error.response.data.error
+        ? error.response.data.error
         : error.message
     if (message === 'Not authorized, token failed') {
       dispatch(logout())
@@ -249,8 +249,8 @@ export const listOrders = () => async (dispatch, getState) => {
     })
   } catch (error) {
     const message =
-      error.response && error.response.data.message
-        ? error.response.data.message
+      error.response && error.response.data.error
+        ? error.response.data.error
         : error.message
     if (message === 'Not authorized, token failed') {
       dispatch(logout())
